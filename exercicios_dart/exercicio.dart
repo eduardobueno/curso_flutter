@@ -1,3 +1,5 @@
+import 'src/pessoa.dart';
+
 class Produto {
   String? nome;
   double? preco;
@@ -13,6 +15,11 @@ class Produto {
 }
 
 main() {
+  var p1 = Pessoa();
+  p1.nome = 'João';
+  p1.cpf = '123.456.789-00';
+  print('Nome: ${p1.nome}, CPF: ${p1.cpf}');
+
   String nome = 'Eduardo';
   print(nome);
 
@@ -34,6 +41,6 @@ main() {
   const pi = 3.1415;
   print('O número pi é ${pi}');
 
-  var p1 = new Produto(nome: 'Lápis', preco: 4.99);
-  print('Produto: ${p1.nome}, Valor: ${p1.preco}');
+  var p3 = new Produto(nome: 'Lápis', preco: 4.99);
+  print('Produto: ${p3.nome}, Valor: ${p3.preco}');
 }

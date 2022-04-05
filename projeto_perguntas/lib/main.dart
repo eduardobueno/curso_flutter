@@ -5,6 +5,19 @@ main() => runApp(const PerguntasApp());
 class PerguntasApp extends StatelessWidget {
   const PerguntasApp({Key? key}) : super(key: key);
 
+  void responder() {
+    print('Pergunta respondida!');
+  }
+
+  void Function() funcaoQueRetornaUmaOutraFuncao() {
+    return () {
+      print('Pergunta respondida 2!');
+    };
+  }
+
+  void Function() outraFuncaoQueRetornaUmaOutraFuncao() =>
+      funcaoQueRetornaUmaOutraFuncao();
+
   @override
   Widget build(BuildContext context) {
     final List<String> perguntas = [
@@ -22,15 +35,15 @@ class PerguntasApp extends StatelessWidget {
             Text(perguntas[0]),
             RaisedButton(
               child: Text('Resposta 1'),
-              onPressed: null,
+              onPressed: responder,
             ),
             RaisedButton(
               child: Text('Resposta 2'),
-              onPressed: null,
+              onPressed: funcaoQueRetornaUmaOutraFuncao(),
             ),
             RaisedButton(
               child: Text('Resposta 3'),
-              onPressed: null,
+              onPressed: outraFuncaoQueRetornaUmaOutraFuncao(),
             ),
           ],
         ),

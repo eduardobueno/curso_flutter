@@ -1,22 +1,14 @@
 import 'package:flutter/material.dart';
 
-main() => runApp(const PerguntasApp());
+main() => runApp(PerguntasApp());
 
 class PerguntasApp extends StatelessWidget {
-  const PerguntasApp({Key? key}) : super(key: key);
+  var perguntaSelecionada = 0;
 
   void responder() {
-    print('Pergunta respondida!');
+    perguntaSelecionada++;
+    print(perguntaSelecionada);
   }
-
-  void Function() funcaoQueRetornaUmaOutraFuncao() {
-    return () {
-      print('Pergunta respondida 2!');
-    };
-  }
-
-  void Function() outraFuncaoQueRetornaUmaOutraFuncao() =>
-      funcaoQueRetornaUmaOutraFuncao();
 
   @override
   Widget build(BuildContext context) {
@@ -39,11 +31,11 @@ class PerguntasApp extends StatelessWidget {
             ),
             RaisedButton(
               child: Text('Resposta 2'),
-              onPressed: funcaoQueRetornaUmaOutraFuncao(),
+              onPressed: responder,
             ),
             RaisedButton(
               child: Text('Resposta 3'),
-              onPressed: outraFuncaoQueRetornaUmaOutraFuncao(),
+              onPressed: responder,
             ),
           ],
         ),

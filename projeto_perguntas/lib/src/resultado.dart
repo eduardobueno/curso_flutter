@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class Conclusao extends StatelessWidget {
+class Resultado extends StatelessWidget {
   final String texto;
 
-  Conclusao(this.texto);
+  Resultado(this.texto);
 
   @override
   Widget build(BuildContext context) {

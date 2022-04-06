@@ -65,7 +65,8 @@ class _PerguntaAppState extends State<PerguntasApp> {
                 quandoResponder: _responder,
               )
             : Resultado(
-                'Parabéns, você fez ${_pontuacaoTotal.toString()} pontos!'),
+                'Parabéns, você fez ${_pontuacaoTotal.toString()} pontos!',
+                _pontuacaoTotal),
       ),
     );
   }
